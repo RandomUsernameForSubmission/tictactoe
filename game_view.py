@@ -1,5 +1,7 @@
 import tkinter
+
 from tkinter import messagebox
+from tkinter import simpledialog
 
 
 class GameView:
@@ -32,6 +34,10 @@ class GameView:
                 
     def show_message(self, titre, message):
         return messagebox.showinfo(titre, message)
+    
+    def ask_pawn(self):
+        pawn = simpledialog.askstring("Choix du pion", "Choisissez votre pion (X ou O):")
+        return pawn if pawn in ['X', 'O'] else 'X'
 
     def refresh(self):
         self.window.update_idletasks()
