@@ -1,0 +1,17 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Test/cache outputs
+.pytest_cache/
+.coverage
+htmlcov/
+
+# macOS
+.DS_Store
