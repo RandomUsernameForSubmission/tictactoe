@@ -4,10 +4,9 @@ from game_state import GameState
 from tkinter import messagebox
 
 class GameBoard:
-    def __init__(self, state: GameState, view, ask_pawn):
+    def __init__(self, state: GameState, view):
         self.state = state
         self.view = view
-        self.ask_pawn = ask_pawn
         self.view.build_board(self.state.board_size, self.player_move)
 
     def player_move(self, x, y):
@@ -44,7 +43,7 @@ class GameBoard:
     def replay(self):
         replay = messagebox.askyesno("Nouvelle partie", "Voulez-vous rejouer ?")
         if replay == True:
-            new_player_pawn = self.ask_pawn()
+            new_player_pawn = self.view.ask_pawn()
             self.state.reset_state(new_player_pawn)
             self.view.reset_view()
         else:
