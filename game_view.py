@@ -32,8 +32,11 @@ class GameView:
             for button in row:
                 button.config(state='disabled')
                 
-    def show_message(self, titre, message):
-        return messagebox.showinfo(titre, message)
+    def show_message(self, title, message):
+        return messagebox.showinfo(title, message)
+    
+    def yn_question(self, title, question):
+        return messagebox.askyesno(title, question)
     
     def ask_pawn(self):
         pawn = simpledialog.askstring("Choix du pion", "Choisissez votre pion (X ou O):")
